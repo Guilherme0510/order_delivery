@@ -39,7 +39,7 @@ export default function Pedidos() {
   const bucket = (o: Order) => {
     if (o.doneAt) return "done";
     const e = now - o.createdAt;
-    return e < 0.1 * MIN ? "green" : e < 0.2 * MIN ? "orange" : "red";
+    return e < 5 * MIN ? "green" : e < 10 * MIN ? "orange" : "red";
   };
 
   return (
